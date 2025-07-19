@@ -1,0 +1,229 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  /* Enhanced medical-friendly color palette */
+  --medical-blue: #4A90E2;
+  --medical-blue-dark: #2563EB;
+  --medical-blue-light: #F0F7FF;
+  --medical-slate: #334155;
+  --medical-slate-light: #64748B;
+  --medical-white: #FFFFFF;
+  --medical-gray: #F8FAFC;
+  --medical-accent: #63B3ED;
+}
+
+/* Base styles */
+body {
+  background-color: var(--medical-white);
+  color: var(--medical-slate);
+  font-family: 'Inter', sans-serif;
+}
+
+/* Infinite scroll animation with smooth easing */
+@keyframes scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(calc(-50% - 2rem));
+  }
+}
+
+.animate-scroll {
+  animation: scroll var(--animation-duration, 300s) var(--animation-direction, forwards) cubic-bezier(0.4, 0, 0.2, 1) infinite;
+  animation-play-state: running;
+}
+
+.animate-scroll:hover {
+  animation-play-state: paused;
+  transition: all 0.5s ease;
+}
+
+/* Enhanced hover effects */
+.hover-lift {
+  transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1),
+              box-shadow 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.hover-lift:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 20px 40px rgba(74, 144, 226, 0.12);
+}
+
+/* Medical-themed components */
+.btn-primary {
+  @apply bg-[#2B84EA] text-white px-6 py-3 rounded-lg hover:bg-[#2472d4] transition-all 
+  shadow-md hover:shadow-lg font-medium;
+}
+
+.btn-secondary {
+  @apply bg-white text-[#2B84EA] border-2 border-[#2B84EA] px-6 py-3 rounded-lg 
+  hover:bg-[#EBF5FF] transition-all font-medium;
+}
+
+.medical-card {
+  @apply bg-white rounded-xl shadow-md hover:shadow-lg transition-all p-6 border border-gray-100;
+}
+
+.section-title {
+  @apply text-3xl md:text-4xl font-bold text-[#2D3748] mb-4;
+}
+
+.section-subtitle {
+  @apply text-lg text-gray-600 max-w-2xl mx-auto;
+}
+
+/* Feature cards */
+.feature-card {
+  @apply bg-white p-6 rounded-xl shadow-md hover:shadow-lg transition-all
+  border border-gray-100 hover:border-[#2B84EA]/20;
+}
+
+.feature-icon {
+  @apply w-12 h-12 bg-[#EBF5FF] rounded-full flex items-center justify-center
+  text-[#2B84EA] mb-4;
+}
+
+/* Stats section */
+.stat-card {
+  @apply bg-[#EBF5FF] rounded-xl p-6 text-center;
+}
+
+.stat-number {
+  @apply text-3xl font-bold text-[#2B84EA] mb-2;
+}
+
+.stat-label {
+  @apply text-gray-700 font-medium;
+}
+
+/* Testimonial cards */
+.testimonial-card {
+  @apply bg-white p-6 rounded-xl shadow-md border border-gray-100;
+}
+
+.testimonial-quote {
+  @apply text-gray-600 italic mb-4;
+}
+
+/* Hospital cards */
+.hospital-card {
+  @apply bg-white rounded-xl shadow-md overflow-hidden hover:shadow-lg transition-all
+  border border-gray-100;
+}
+
+.hospital-image {
+  @apply h-48 w-full object-cover;
+}
+
+.hospital-content {
+  @apply p-6;
+}
+
+.hospital-title {
+  @apply text-xl font-semibold text-[#2D3748] mb-2;
+}
+
+.hospital-specialty {
+  @apply bg-[#EBF5FF] text-[#2B84EA] text-sm px-3 py-1 rounded-full inline-block mr-2 mb-2;
+}
+
+/* Navigation */
+.nav-link {
+  @apply text-gray-600 hover:text-[#2B84EA] transition-colors font-medium;
+}
+
+.nav-link.active {
+  @apply text-[#2B84EA];
+}
+
+/* Form elements */
+.input-field {
+  @apply w-full px-4 py-2 rounded-lg border border-gray-300 focus:border-[#2B84EA] 
+  focus:ring-2 focus:ring-[#2B84EA]/20 outline-none transition-all;
+}
+
+.form-label {
+  @apply block text-gray-700 font-medium mb-2;
+}
+
+/* Medical-themed gradients */
+.medical-gradient-blue {
+  @apply bg-gradient-to-r from-[#2B84EA] to-[#38BDF8];
+}
+
+.medical-gradient-subtle {
+  @apply bg-gradient-to-r from-[#EBF5FF] to-[#F8FAFC];
+}
+
+/* Custom component styles */
+.card {
+  @apply bg-custom-white shadow-md rounded-lg p-6;
+}
+
+.navbar {
+  @apply bg-custom-white shadow-md;
+}
+
+.sidebar {
+  @apply bg-custom-light-blue;
+}
+
+.table-header {
+  @apply bg-custom-blue text-gray-800;
+}
+
+.table-row-alt {
+  @apply bg-custom-light-blue;
+}
+
+/* Form styles */
+.form-container {
+  @apply bg-custom-white p-6 rounded-lg shadow-md;
+}
+
+/* Modal styles */
+.modal-content {
+  @apply bg-custom-white rounded-lg shadow-xl;
+}
+
+/* Fix for modal backdrops - remove black background */
+div.fixed.inset-0,
+.fixed.inset-0,
+.fixed.inset-0.bg-black,
+.fixed.inset-0.bg-black.bg-opacity-25,
+.fixed.inset-0.bg-black.bg-opacity-50,
+.fixed.inset-0.bg-black\/30,
+.fixed.inset-0.bg-black\/50,
+[class^="fixed inset-0"],
+[class*=" fixed inset-0"],
+[class*="fixed inset-0 bg-black"] {
+  background-color: transparent !important;
+  background: none !important;
+  background-image: none !important;
+  -webkit-backdrop-filter: none !important;
+  backdrop-filter: none !important;
+}
+
+/* Dashboard card styles */
+.dashboard-card {
+  @apply bg-gradient-to-br from-custom-light-blue to-custom-blue rounded-lg shadow-md p-6;
+}
+
+/* Alert styles */
+.alert-success {
+  @apply bg-custom-blue text-gray-800;
+}
+
+.alert-error {
+  @apply bg-red-100 text-red-800;
+}
+
+/* Loading spinner background */
+.loading-overlay {
+  @apply bg-custom-white bg-opacity-75;
+} 

@@ -1,0 +1,888 @@
+/* Medical theme colors - Defined here, not in tailwind.config.js */
+:root {
+  --color-medical-emerald: #10B981;
+  --color-medical-emerald-dark: #059669;
+  --color-medical-teal: #14B8A6;
+  --color-medical-teal-light: #99F6E4;
+  --color-medical-cyan: #06B6D4;
+  --color-medical-green: #16A34A;
+  --color-medical-slate: #334155;
+  --color-medical-slate-light: #64748B;
+  --color-gray-200: #edf2f7; /* Assuming gray-200 is defined, or replace with your value */
+  --color-gray-400: #cbd5e0;/* Assuming a default */
+  --color-gray-500: #a0aec0;
+  --color-gray-600: #718096;
+  --color-gray-700: #4a5568;
+  --color-gray-800: #2d3748;
+  --color-blue-50: #eff6ff;
+    --color-green-200:#bbf7d0;
+     --color-emerald-50: #ecfdf5;
+    --color-emerald-200: #a7f3d0;
+    --color-emerald-300: #6ee7b7;
+  --color-emerald-400: #34d399;
+  --color-emerald-500: #10b981;
+  --color-emerald-600: #059669;
+  --color-emerald-700: #047857;
+  --color-emerald-900: #064e3b;
+   --color-teal-50: #f0fdfa;
+  --color-teal-500: #14b8a6;
+  --color-teal-600: #0d9488;
+    --color-cyan-600:#0891b2;
+   --color-cyan-700:#0e7490;
+      --color-white: #ffffff;
+    --color-blue-500:#3b82f6;
+}
+
+/* Role selection buttons styling */
+.role-button {
+  background-color: var(--color-white);
+  color: var(--color-gray-600);
+  border: 1px solid var(--color-gray-200);
+  border-radius: 0.75rem;
+  padding: 1rem 1.5rem;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.role-button:hover {
+  border-color: var(--color-emerald-500);
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+  transform: translateY(-2px);
+}
+
+.role-button.selected {
+  background-image: linear-gradient(to right, var(--color-emerald-500), var(--color-teal-400));
+  color: var(--color-white);
+  border-color: transparent;
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+  transform: scale(1.05);
+}
+
+/* Enhanced button styles */
+.btn-primary {
+background-image: linear-gradient(to right, var(--color-emerald-500), var(--color-teal-500), var(--color-cyan-600));
+color: var(--color-white);
+padding: 0.75rem 1.5rem;
+border-radius: 0.75rem;
+font-weight: 500;
+transition-property: all;
+transition-duration: 300ms;
+box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+transform: translateY(0);
+border: 1px solid var(--color-emerald-400);
+}
+.btn-primary:hover {
+  background-image: linear-gradient(to right, var(--color-emerald-600), var(--color-teal-600), var(--color-cyan-700));
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  transform: translateY(-0.125rem)
+}
+.medical-gradient-subtle{
+background-image: linear-gradient(to bottom right, var(--color-green-200),var(--color-blue-50), var(--color-blue-50) );
+}
+
+
+.btn-secondary {
+  background-color: var(--color-white);
+  color: var(--color-emerald-600);
+  padding: 0.75rem 1.5rem;
+  border-radius: 0.75rem;
+  font-weight: 500;
+  border-width: 2px;
+  border-color: var(--color-emerald-500);
+  transition-property: all;
+  transition-duration: 300ms;
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+}
+
+.btn-secondary:hover {
+border-color: var(--color-emerald-500);
+background-image: linear-gradient(to right, var(--color-emerald-50), var(--color-teal-50));
+box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  color: var(--color-emerald-700);
+}
+
+
+.section-title {
+  font-size: 2.25rem; /* text-4xl */
+  line-height: 2.5rem;
+  font-weight: 700;
+  color: transparent;
+  margin-bottom: 1rem;
+  background-clip: text;
+  background-image: linear-gradient(to right, var(--color-emerald-600), var(--color-teal-500));
+  letter-spacing: -0.025em;
+}
+
+@media (min-width: 768px) {
+  .section-title {
+      font-size: 3rem; /* md:text-5xl */
+      line-height: 1;
+  }
+}
+
+.section-subtitle {
+font-size: 1.25rem;
+line-height: 1.75rem;
+  color: var(--color-gray-600);
+  max-width: 72rem;
+  margin-left: auto;
+  margin-right: auto;
+  line-height: 1.625;
+  letter-spacing: 0.025em;
+
+}
+
+.stat-card {
+background-color: var(--color-white);
+padding: 2rem;
+  border-radius: 1rem;
+box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+  text-align: center;
+border: 1px solid var(--color-green-200);
+transform: translateY(0);
+transition-property: all;
+transition-duration: 300ms;
+  opacity: 0.9;
+}
+
+.stat-card:hover {
+ border-color: var(--color-emerald-200);
+}
+
+
+.stat-number {
+ font-size: 2.25rem;
+  line-height: 2.5rem;
+  font-weight: 700;
+  color: transparent;
+  margin-bottom: 0.5rem;
+  background-clip: text;
+  background-image: linear-gradient(to right, var(--color-emerald-600), var(--color-teal-500));
+  letter-spacing: -0.025em;
+
+}
+@media (min-width: 768px){
+.stat-number{
+   font-size: 3rem;
+  line-height: 1;
+}
+}
+.stat-label {
+  color: var(--color-gray-700);
+  font-weight: 600;
+font-size: 1.125rem;
+  line-height: 1.75rem;
+  letter-spacing: 0.025em;
+}
+
+/* Enhanced card effects */
+.feature-card {
+background-color: var(--color-white);
+  padding: 2rem;
+  border-radius: 1rem;
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+  border: 1px solid var(--color-green-200);
+  transition-property: all;
+  transition-duration: 500ms;
+  transform: translateY(0);
+}
+.feature-card:hover{
+box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+ border-color: var(--color-emerald-200);
+ transform: translateY(-0.5rem);
+}
+
+.feature-icon {
+width: 4rem;
+  height: 4rem;
+background-image: linear-gradient(to bottom right, var(--color-emerald-400), var(--color-teal-500), var(--color-cyan-600));
+border-radius: 1rem;
+display: flex;
+align-items: center;
+justify-content: center;
+  color: var(--color-white);
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  margin-bottom: 1.5rem;
+transform: translateY(0);
+transition-property: all;
+transition-duration: 500ms;
+border: 1px solid var(--color-emerald-300);
+}
+
+.hospital-card {
+  background-color: var(--color-white);
+border-radius: 1.5rem;
+ box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+overflow: hidden;
+ border: 1px solid var(--color-green-200);
+transition-property: all;
+transition-duration: 500ms;
+position: relative;
+}
+.hospital-card:hover{
+box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+border-color:var(--color-emerald-300);
+}
+
+.hospital-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+ transition-property: all;
+transition-duration: 700ms;
+}
+
+.hospital-content {
+ padding: 2rem;
+ background-color: var(--color-white);
+  border-top-width: 1px;
+border-color: var(--color-green-200);
+}
+
+.hospital-title {
+  font-size: 1.5rem;
+  line-height: 2rem;
+  font-weight: 700;
+  color: var(--color-gray-800);
+ margin-bottom: 0.75rem;
+letter-spacing: -0.025em;
+  line-height: 1.25;
+transition-property: all;
+  transition-duration: 300ms;
+}
+
+.hospital-specialty {
+font-size: 0.875rem;
+  line-height: 1.25rem;
+  padding: 0.5rem 1rem;
+ border-radius: 9999px;
+  transition-property: all;
+ transition-duration: 300ms;
+font-weight: 500;
+  letter-spacing: 0.025em;
+transform: scale(1);
+}
+.hospital-specialty:hover{
+ transform: scale(1.05);
+}
+
+/* Animation keyframes - Defined inline, not in tailwind.config.js */
+
+@keyframes cardFloat {
+0%, 100% { transform: translateY(0) rotate(0deg); }
+50% { transform: translateY(-8px) rotate(0.5deg); }
+}
+
+@keyframes float {
+0%, 100% { transform: translateY(0px) rotate(0deg); }
+50% { transform: translateY(-10px) rotate(1deg) scale(1.01); }
+}
+
+@keyframes scrollLeft {
+0% { transform: translateX(0); }
+100% { transform: translateX(-100%); }
+}
+
+@keyframes emptyStatePulse {
+0%, 100% { transform: scale(1) rotate(0deg); opacity: 0.7; }
+50% { transform: scale(1.05) rotate(1deg); opacity: 1; }
+}
+
+.hospital-card:hover {
+transition-property: all;
+transition-duration: 300ms;
+}
+
+/* Hospital content hover effects */
+.hospital-content:hover .hospital-title {
+ color: var(--color-emerald-600);
+}
+
+/* Hospital specialty tag animations */
+.hospital-specialty {
+transform: scale(1);
+transition-property: transform;
+  transition-duration: 300ms;
+
+}
+
+.hospital-specialty:hover {
+ transform: scale(1.05);
+}
+
+/* Hospital card loading state */
+.hospital-card-skeleton {
+animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+background-color: var(--color-gray-200);
+border-radius: 1.5rem;
+overflow: hidden;
+}
+
+/* Responsive adjustments handled by Tailwind breakpoints */
+@media (max-width: 768px) {
+.hospital-card {
+ border-radius: 1rem;
+}
+
+.hospital-content {
+  padding: 1.5rem;
+}
+
+.hospital-title {
+    font-size: 1.25rem;
+    line-height: 1.75rem;
+}
+
+.hospital-specialty {
+      font-size: 0.75rem;
+      line-height: 1rem;
+   padding: 0.375rem 0.75rem;
+}
+}
+
+/* Enhanced loading spinner for hospitals */
+.loading-spinner-hospital {
+animation: spin 1s linear infinite;
+  border-radius: 9999px;
+ height: 4rem;
+  width: 4rem;
+  border-width: 4px;
+  border-color: var(--color-emerald-200);
+   border-top-color: var(--color-emerald-600);
+   border-right-color: var(--color-emerald-500);
+  opacity: 0.75;
+ box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+}
+
+/* Hospital section background patterns */
+.hospital-section-pattern {
+ background-color: var(--color-blue-50);
+  opacity: 0.1;
+}
+
+/* Hospital card contact info */
+.contact-info-item {
+display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.75rem;
+  border-radius: 0.75rem;
+  transition-property: all;
+  transition-duration: 300ms;
+}
+.contact-info-item:hover{
+ background-color: var(--color-emerald-50);
+}
+
+.contact-info-icon {
+  width: 3rem;
+  height: 3rem;
+   border-radius: 0.75rem;
+display: flex;
+  align-items: center;
+ justify-content: center;
+  background-color: var(--color-emerald-50);
+ color: var(--color-emerald-600);
+  transition-property: all;
+transition-duration: 300ms;
+box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+}
+
+.contact-info-text {
+ flex: 1 1 0%;
+}
+
+.contact-info-label {
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+color: var(--color-gray-500);
+  display: block;
+}
+
+.contact-info-value {
+font-size: 1rem;
+  line-height: 1.5rem;
+ font-weight: 500;
+ color: var(--color-gray-700);
+}
+
+/* View details button */
+.view-details-button {
+  display: inline-flex;
+align-items: center;
+  gap: 0.5rem;
+padding: 0.75rem 1.5rem;
+color: var(--color-emerald-600);
+ font-weight: 500;
+ transition-property: all;
+transition-duration: 300ms;
+}
+.view-details-button:hover{
+ color: var(--color-emerald-700);
+  gap:0.75rem;
+}
+
+/* Hospital card image overlay */
+.hospital-image-overlay {
+position: absolute;
+  inset: 0;
+  background-image: linear-gradient(to top, var(--color-emerald-900), transparent);
+ transition-property: opacity;
+  transition-duration: 300ms;
+ opacity: 0.8;
+}
+
+/* Hospital specialties container */
+.specialties-container {
+display: flex;
+flex-wrap: wrap;
+gap: 0.5rem;
+transition-property: all;
+transition-duration: 300ms;
+}
+
+.animate-float {
+ transition-property: all;
+ transition-duration: 300ms;
+}
+
+/* Enhanced glass morphism */
+.glass-card {
+background-color: var(--color-white);
+ border: 1px solid var(--color-green-200);
+ box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+ transition-property: all;
+transition-duration: 500ms;
+}
+.glass-card:hover{
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+}
+
+/* Enhanced gradient text */
+.gradient-text {
+color: transparent;
+background-clip: text;
+background-image: linear-gradient(to right, var(--color-emerald-600), var(--color-teal-500), var(--color-cyan-600));
+transition-property: colors;
+transition-duration: 300ms;
+}
+
+/* Enhanced loading animation */
+.loading-spinner {
+  animation: spin 1s linear infinite;
+ border-radius: 9999px;
+height: 3rem;
+width: 3rem;
+border-width: 4px;
+border-color: var(--color-emerald-200);
+border-top-color: var(--color-emerald-600);
+border-right-color: var(--color-emerald-500);
+border-bottom-color: var(--color-teal-400);
+box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+opacity: 0.9;
+}
+
+/* Hero section */
+.hero {
+ min-height: 100vh;
+display: flex;
+  align-items: center;
+  justify-content: center;
+background-image: linear-gradient(to bottom right, var(--color-teal-50), var(--color-white), var(--color-cyan-50));
+  text-align: center;
+padding: 2rem;
+}
+
+.hero-content {
+max-width: 64rem;
+margin-left: auto;
+margin-right: auto;
+}
+
+.hero h1 {
+  font-size: 3rem;
+  line-height: 1;
+ font-weight: 700;
+margin-bottom: 1.5rem;
+ color: transparent;
+ background-clip: text;
+ background-image: linear-gradient(to right, var(--color-emerald-600), var(--color-teal-500));
+  letter-spacing: -0.025em;
+  line-height: 1.1;
+}
+@media (min-width:768px){
+.hero h1{
+    font-size: 4.5rem;
+    line-height: 1;
+}
+}
+
+.hero p {
+font-size: 1.25rem;
+line-height: 1.75rem;
+color: var(--color-gray-600);
+  margin-bottom: 2rem;
+line-height: 1.625;
+letter-spacing: 0.025em;
+}
+@media (min-width: 768px){
+.hero p{
+     font-size: 1.5rem;
+      line-height: 2rem;
+}
+}
+
+/* Features grid */
+.features-grid {
+display: grid;
+grid-template-columns: repeat(1, minmax(0, 1fr));
+  gap: 2rem;
+padding-top: 3rem;
+padding-bottom: 3rem;
+}
+
+@media (min-width: 768px) {
+.features-grid{
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+}
+@media (min-width: 1024px) {
+.features-grid{
+   grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+}
+.animate-scroll-left {
+  animation: scrollLeft 25s linear infinite;
+}
+.animate-scroll-slow {
+  animation: scrollLeft 40s linear infinite;
+}
+.hover\:pause:hover{
+  animation-play-state: paused;
+}
+
+/* Add smooth transition for hover effects */
+.animate-scroll-left > * {
+  flex-shrink: 0;
+}
+
+/* Enhanced card hover effects */
+.hospital-card:hover .hospital-image {
+transform: scale(1.05) rotate(1deg);
+}
+
+.hospital-card:hover .hospital-content {
+  background-color: var(--color-emerald-50);
+}
+
+/* Enhanced empty state animation */
+.empty-state-icon {
+ animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+/* Ensure smooth scrolling */
+.animate-scroll-left {
+  transform: translateX(0); /* Resetting default transform */
+}
+
+/* Enhanced background patterns */
+.pattern-grid {
+background-color: var(--color-emerald-50);
+}
+
+.pattern-dots {
+ background-color: var(--color-emerald-50);
+}
+
+/* Enhanced hover transitions */
+.hover-lift {
+transition-property: all;
+ transition-duration: 500ms;
+  transform: translateY(0);
+  box-shadow:  0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06); /* Default shadow */
+  transform: rotate(0deg);
+
+}
+.hover-lift:hover{
+transform: translateY(-0.5rem) rotate(1deg);
+   box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+}
+
+@keyframes pulse {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: .5;
+  }
+}
+
+@keyframes spin {
+from {
+  transform: rotate(0deg);
+}
+to {
+  transform: rotate(360deg);
+}
+}
+
+@keyframes scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+@keyframes scroll-reverse {
+  0% {
+    transform: translateX(-50%);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+.infinite-moving-cards {
+  position: relative;
+  overflow: hidden;
+  mask-image: linear-gradient(
+    to right,
+    transparent 0%,
+    black 10%,
+    black 90%,
+    transparent 100%
+  );
+  -webkit-mask-image: linear-gradient(
+    to right,
+    transparent 0%,
+    black 10%,
+    black 90%,
+    transparent 100%
+  );
+}
+
+.infinite-moving-cards-content {
+  display: flex;
+  flex-shrink: 0;
+  flex-wrap: nowrap;
+  gap: 1rem;
+  position: relative;
+  animation-duration: var(--animation-duration, 60s);
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  min-width: max-content;
+  width: 200%; /* Make content twice as wide */
+}
+
+.infinite-moving-cards-content[data-direction="left"] {
+  animation-name: scroll;
+}
+
+.infinite-moving-cards-content[data-direction="right"] {
+  animation-name: scroll-reverse;
+}
+
+.infinite-moving-cards-content[data-pause="true"]:hover {
+  animation-play-state: paused;
+}
+
+.testimonial-card {
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  background: var(--color-white);
+  border-radius: 1rem;
+  padding: 2rem;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  border: 1px solid var(--color-emerald-200);
+  transition: all 0.3s ease;
+  width: 300px;
+  max-width: 300px;
+}
+
+.testimonial-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  border-color: var(--color-emerald-400);
+}
+
+.testimonial-avatar {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 1rem;
+  border: 3px solid var(--color-emerald-200);
+}
+
+.testimonial-name {
+  font-weight: 600;
+  color: var(--color-gray-800);
+  margin-bottom: 0.5rem;
+  font-size: 1.125rem;
+}
+
+.testimonial-quote {
+  color: var(--color-gray-600);
+  line-height: 1.6;
+  font-size: 0.875rem;
+  max-height: 6rem;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 4;
+  -webkit-box-orient: vertical;
+}
+
+/* Ensure the animation starts immediately */
+@media (prefers-reduced-motion: no-preference) {
+  .infinite-moving-cards-content {
+    animation-delay: 0s !important;
+  }
+}
+
+/* Replace blinking with smoother animations */
+@keyframes pulse-smooth {
+  0% { opacity: 0.7; transform: scale(1); }
+  50% { opacity: 1; transform: scale(1.03); }
+  100% { opacity: 0.7; transform: scale(1); }
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}
+
+@keyframes float-advanced {
+  0% { transform: translateY(0px) rotate(0deg); }
+  25% { transform: translateY(-6px) rotate(0.5deg); }
+  50% { transform: translateY(-10px) rotate(1deg); }
+  75% { transform: translateY(-6px) rotate(0.5deg); }
+  100% { transform: translateY(0px) rotate(0deg); }
+}
+
+.animate-pulse-smooth {
+  animation: pulse-smooth 3s ease-in-out infinite;
+}
+
+.animate-float-advanced {
+  animation: float-advanced 6s ease-in-out infinite;
+}
+
+.animate-shimmer {
+  background: linear-gradient(
+    90deg,
+    rgba(255, 255, 255, 0) 0%,
+    rgba(255, 255, 255, 0.2) 25%,
+    rgba(255, 255, 255, 0.2) 50%,
+    rgba(255, 255, 255, 0) 100%
+  );
+  background-size: 200% 100%;
+  animation: shimmer 2s infinite;
+}
+
+/* Professional visual elements */
+.dot-pattern {
+  background-image: radial-gradient(rgba(16, 185, 129, 0.1) 1px, transparent 1px);
+  background-size: 16px 16px;
+}
+
+.grid-pattern {
+  background-image: 
+    linear-gradient(to right, rgba(16, 185, 129, 0.05) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(16, 185, 129, 0.05) 1px, transparent 1px);
+  background-size: 18px 18px;
+}
+
+.gradient-border {
+  position: relative;
+  border-radius: 0.5rem;
+  padding: 1px;
+  background: linear-gradient(60deg, var(--color-emerald-400), var(--color-teal-500), var(--color-cyan-400));
+}
+
+.gradient-border::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 0.5rem;
+  padding: 1.5px;
+  background: linear-gradient(60deg, var(--color-emerald-400), var(--color-teal-500), var(--color-cyan-400));
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+}
+
+/* Refined card hover effects */
+.hover-lift-professional {
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+}
+
+.hover-lift-professional:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+}
+
+/* Glass morphism */
+.glass-effect {
+  background: rgba(255, 255, 255, 0.6);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+/* Subtle gradient text */
+.gradient-text-subtle {
+  background: linear-gradient(90deg, var(--color-emerald-600) 0%, var(--color-teal-500) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Interactive element scaling */
+.scale-on-hover {
+  transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.scale-on-hover:hover {
+  transform: scale(1.05);
+}
+
+/* Section divider with gradient */
+.section-divider {
+  height: 3px;
+  background: linear-gradient(to right, transparent, var(--color-emerald-400), transparent);
+  margin: 4rem auto;
+  width: 80%;
+  max-width: 800px;
+  opacity: 0.7;
+}
+
+/* Floating animation adjustment */
+.animate-float {
+  animation: float 6s ease-in-out infinite;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .animate-float-advanced {
+    animation-duration: 4s;
+  }
+  
+  .hover-lift-professional:hover {
+    transform: translateY(-5px);
+  }
+}
